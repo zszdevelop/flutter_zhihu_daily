@@ -3,6 +3,7 @@ class Api {
 
   // 今日热闻
   static final String getLatest = HOST +"news/latest";
-
+  // 新闻详情
+  static final String getDetailContent = HOST +"story/";
 
 }

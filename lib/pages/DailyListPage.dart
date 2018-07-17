@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../api/Api.dart';
 import '../utils/NetUtils.dart';
 import 'dart:convert';
+import '../widgets/BannerView.dart';
 
 /**
  * 日报列表
@@ -31,13 +32,14 @@ class _DailyListPageState extends State<DailyListPage> {
 
   @override
   Widget build(BuildContext context) {
+
     if (stories == null) {
       return new Center(
         child: new CircularProgressIndicator(),
       );
     } else {
       Widget listView = new ListView.builder(
-          itemCount: stories.length,
+          itemCount: stories.length+1,
           itemBuilder: (context, i) => renderRow(i));
       return new RefreshIndicator(child: listView, onRefresh: _pullToRefresh);
     }
@@ -48,7 +50,7 @@ class _DailyListPageState extends State<DailyListPage> {
    */
   getDailyData(bool isRefresh) {
     String url = Api.getLatest;
-    print("日报url$url");
+    print("日报url  $url");
     NetUtils.get(url, (data) {
       if (data != null) {
         Map<String, dynamic> map = json.decode(data);
@@ -68,6 +70,13 @@ class _DailyListPageState extends State<DailyListPage> {
   }
 
   Widget renderRow(int i) {
+    if(i == 0){
+      return new  Container(
+        height: 180.0,
+        child: BannerView(top_stories),
+      );
+    }
+    i -= 1;
     var storie = stories[i];
     var content = new Row(
       children: <Widget>[

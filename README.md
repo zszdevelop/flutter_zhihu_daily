@@ -4,5 +4,5 @@ A new Flutter application.
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+知乎日报 flutter 客户端，功能完善中...
+![](http://ww1.sinaimg.cn/large/81eeb0fcgy1ftcxnhxp01j20qo1hcn1r.jpg)
