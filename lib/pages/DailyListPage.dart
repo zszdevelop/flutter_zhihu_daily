@@ -5,6 +5,7 @@ import '../api/Api.dart';
 import '../utils/NetUtils.dart';
 import 'dart:convert';
 import '../widgets/BannerView.dart';
+import 'DailyDetailPage.dart';
 
 /**
  * 日报列表
@@ -43,6 +44,8 @@ class _DailyListPageState extends State<DailyListPage> {
           itemBuilder: (context, i) => renderRow(i));
       return new RefreshIndicator(child: listView, onRefresh: _pullToRefresh);
     }
+
+
   }
 
   /**
@@ -103,11 +106,19 @@ class _DailyListPageState extends State<DailyListPage> {
           left: 12.0, top: 6.0, bottom: 6.0, right: 12.0),
       child: content,
     );
-    return card;
+
+    return new InkWell(
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DailyDetailPage(id: storie['id'],)));
+      },
+      child: card,
+    );
   }
 
   Future<Null> _pullToRefresh() async {
     getDailyData(true);
     return null;
   }
+
+
 }

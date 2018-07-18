@@ -14,7 +14,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="flutter_zhihu_daily"
+        android:label="flutter知乎日报"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
