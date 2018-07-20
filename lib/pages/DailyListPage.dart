@@ -108,8 +108,10 @@ class _DailyListPageState extends State<DailyListPage> {
     );
 
     return new InkWell(
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DailyDetailPage(id: storie['id'],)));
+      onTap: () async {
+        print("点击开始");
+       String ss = await Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DailyDetailPage(id: storie['id'],)));
+       print("点击回调"+ss);
       },
       child: card,
     );

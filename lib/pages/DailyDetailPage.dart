@@ -65,7 +65,7 @@ class _DailyDetailPageState extends State<DailyDetailPage> {
       leading: new IconButton(
           icon: new Icon(Icons.arrow_back, color: Colors.white,),
           onPressed: (){
-          Navigator.of(context).pop();
+          Navigator.of(context).pop("hahah");
           }),
       actions: <Widget>[
         new IconButton(

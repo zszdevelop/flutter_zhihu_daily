@@ -42,6 +42,7 @@ class _MyDrawerState extends State<MyDrawer> {
           child:  new ListView.builder(
               itemCount: themes == null?2:themes.length+1,
               itemBuilder: (context, i) => renderRow(i)),
+
         ),
       ),
     );
@@ -65,11 +66,11 @@ class _MyDrawerState extends State<MyDrawer> {
     index--;
     var theme = themes[index];
     String menuTitle = theme['name'];
-    String id = theme['id'];
+    int id = theme['id'];
 //    bool checked = theme.checked;
     return new InkWell(
       onTap: () {
-        Navigator.pop(context,Api.getTheme+id);
+//        Navigator.pop(context,Api.getTheme+id);
       },
       child: new Container(
         height: 40.0,
